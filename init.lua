@@ -35,4 +35,6 @@ vim.cmd('cnoremap <expr> <Down> pumvisible() ? "\\<C-n>" : "\\<Down>"')
 
 -- 大文字小文字を区別しない
 --
+--
 vim.o.ignorecase = true
+vim.g.fern_default_hidden = 1
