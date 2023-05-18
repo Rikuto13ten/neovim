@@ -1,22 +1,39 @@
-require 'plugins'
 require 'keymap'
+require 'plugins'
 require 'config/mason'
 
-vim.opt.showtabline = 2
-vim.opt.shiftwidth = 2
-vim.opt.number = true
-vim.opt.autoindent = true
-vim.opt.guifont = {"Iosevka Nerd Font Mono", "h12"}
+
+vim.o.showtabline = 0
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.autoindent = true
+vim.o.number = true
+vim.o.autoindent = true
+vim.o.ignorecase = true
+vim.o.textwidth = 160
+vim.wo.cursorline = true
+
+vim.opt.list = true
+vim.opt.listchars = { tab = '->', space = '␣', eol = '¬', trail = '-' }
+
+vim.g.loaded_devicons = true
+vim.g.devicons_enable = true
+vim.g.indent_blankline_enabled = false
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 --------------------------------
 -- theme
 --------------------------------
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd('syntax on')
+vim.cmd('colorscheme iceberg')
 
 --------------------------------
 -- terminal mode
 --------------------------------
-vim.cmd[[
+vim.cmd [[
   augroup Terminal
     autocmd!
     autocmd TermOpen * startinsert
@@ -24,17 +41,10 @@ vim.cmd[[
 
   command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 ]]
-
 --------------------------------
 -- command mode
 --------------------------------
 
 -- 上下矢印キーで補完候補を選択する
-vim.cmd('cnoremap <expr> <Up>   pumvisible() ? "\\<C-p>" : "\\<Up>"')
+vim.cmd('cnoremap <expr> <Up> pumvisible() ? "\\<C-p>" : "\\<Up>"')
 vim.cmd('cnoremap <expr> <Down> pumvisible() ? "\\<C-n>" : "\\<Down>"')
-
--- 大文字小文字を区別しない
---
---
-vim.o.ignorecase = true
-vim.g.fern_default_hidden = 1
