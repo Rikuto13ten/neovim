@@ -1,7 +1,15 @@
 -- mason
-require('mason').setup()
 
--- mason-lspconfig
+------------------------
+-- Mason_setup
+------------------------
+(function ()
+  require('mason').setup()
+end) ()
+
+------------------------
+-- Mason_lspconfig
+------------------------
 require('mason-lspconfig').setup_handlers({ function(server)
   local opt = {
     capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -9,24 +17,36 @@ require('mason-lspconfig').setup_handlers({ function(server)
   require('lspconfig')[server].setup(opt)
 end })
 
+------------------------
+-- if status
+------------------------
 local status, nvim_lsp = pcall(require, 'lspconfig')
-
 if (not status) then return end
 
+------------------------
+-- protocol
+------------------------
 local protocol = require('vim.lsp.protocol')
 
+------------------------
+-- document_highlight
+------------------------
 local on_attach = function(client, bufnr)
   if client.server_capabilities.documentFormattingProvider then
     vim.cmd('augroup lsp_document_highlight')
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = vim.api.nvim_create_augroup("Format", { clear = true }),
       buffer = bufnr,
-      callback = function() vim.lsp.buf.formatting_seq_sync() end
+      callback = function() 
+        vim.lsp.buf.formatting_seq_sync()
+      end
     })
   end
 end
 
--- ts lsp
+------------------------
+-- tsserver
+------------------------
 require'lspconfig'.tsserver.setup{
   on_attach = on_attach,
   capabilities = {
@@ -36,9 +56,25 @@ require'lspconfig'.tsserver.setup{
   }
 }
 
+local language = {
+  'lua',
+  'typescript',
+  'go',
+  'json',
+  'toml',
+  'tsx',
+  'rust',
+  'html',
+  'css',
+  'javascript',
+  'kotlin',
+}
+
 -- treesitter
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {'lua', 'typescript', 'go', 'json', 'toml', 'tsx', 'rust', 'html', 'css', 'javascript'},
+  ensure_installed = {
+    language
+  },
   sync_install = true,
   auto_install = true,
   highlight = {
@@ -116,7 +152,6 @@ vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>')
 vim.keymap.set('n', 'ga', '<cmd>Lspsaga code_action<CR>')
 vim.keymap.set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>')
 vim.keymap.set('n', 'go', '<cmd>Lspsaga outline<CR>')
-
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')

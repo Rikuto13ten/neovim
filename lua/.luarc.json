@@ -1,5 +1,8 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "autoSave",
+        "window_move",
+        "set_keymap"
     ]
 }

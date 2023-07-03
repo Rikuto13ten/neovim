@@ -16,7 +16,7 @@ vim.o.textwidth = 160
 vim.wo.cursorline = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = '->', space = '␣', eol = '¬', trail = '-' }
+vim.opt.listchars = { tab = '->', space = '･', eol = '¬', trail = '-' }
 
 vim.g.loaded_devicons = true
 vim.g.devicons_enable = true

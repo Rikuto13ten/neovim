@@ -1,8 +1,8 @@
 local set = vim.keymap.set
 --vim.o.macmeta = true
 
--- move window
 vim.g.mapleader = " "
+-- move window
 set( 'n', '<Leader>h', '<C-w>h' )
 set( 'n', '<Leader>j', '<C-w>j' )
 set( 'n', '<Leader>k', '<C-w>k' )
