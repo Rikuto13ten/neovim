@@ -3,9 +3,7 @@
 ------------------------
 -- Mason_setup
 ------------------------
-(function ()
-  require('mason').setup()
-end) ()
+require('mason').setup()
 
 ------------------------
 -- Mason_lspconfig
@@ -145,20 +143,6 @@ nvim_lsp.rust_analyzer.setup {
   }
 }
 
--- 2. build-in LSP function
--- keyboard shortcut
-vim.keymap.set('n', 'gk',  '<cmd>Lspsaga hover_doc<CR>')
-vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>')
-vim.keymap.set('n', 'ga', '<cmd>Lspsaga code_action<CR>')
-vim.keymap.set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>')
-vim.keymap.set('n', 'go', '<cmd>Lspsaga outline<CR>')
-vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
-vim.keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-vim.keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
