@@ -2,7 +2,6 @@ require 'keymap'
 require 'plugins'
 require 'config/mason'
 
-
 vim.o.showtabline = 0
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2

@@ -1,5 +1,3 @@
--- mason
-
 ------------------------
 -- Mason_setup
 ------------------------
@@ -142,7 +140,6 @@ nvim_lsp.rust_analyzer.setup {
     }
   }
 }
-
 
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

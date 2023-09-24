@@ -1,5 +1,8 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
+  --------------------------------------------
+  -- lazy
+  --------------------------------------------
   vim.fn.system({
     "git",
     "clone",
@@ -14,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- lsp
   { "neovim/nvim-lspconfig" },
+  -- mason
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
@@ -41,25 +45,33 @@ require('lazy').setup({
     build = ":TSUpdate"
   },
 
-  -- theme
+  --------------------------------------------
+  -- iceberg
+  --------------------------------------------
   { "cocopon/iceberg.vim" },
 
-  -- nvim-neo-tree
+  --------------------------------------------
+  -- fern
+  --------------------------------------------
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    event = "VimEnter",
-    branch = "main",
-    config = function()
-      require("neo-tree").setup({
-      })
-    end
+	  'lambdalisue/fern.vim',
+	  keys = {
+		  { "<leader>e", ":Fern . -reveal=% -drawer -toggle -width=40<CR>", desc = "toggle fern" },
+	  },
+	  dependencies = {
+		  { 'lambdalisue/nerdfont.vim', },
+		  {
+			  'lambdalisue/fern-renderer-nerdfont.vim',
+			  config = function()
+				  vim.g['fern#renderer'] = "nerdfont"
+			  end
+		  },
+	  }
   },
 
-  { "nvim-lua/plenary.nvim" },
-  { "nvim-tree/nvim-web-devicons" }, -- not strictly required, but recommended
-  { "MunifTanjim/nui.nvim" },
-
+  --------------------------------------------
   -- telescope
+  --------------------------------------------
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -67,6 +79,7 @@ require('lazy').setup({
      require('telescope').setup({})
     end
   },
+
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -75,7 +88,9 @@ require('lazy').setup({
     end
   },
 
+  --------------------------------------------
   -- which-key
+  --------------------------------------------
   {
     "folke/which-key.nvim",
     config = function()
@@ -100,16 +115,6 @@ require('lazy').setup({
     branch = 'v2',
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-
-  -- null-ls
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function ()
-      require('null-ls').setup({
-        diagnotics_format = "#{m} (#{s}: #{c})",
-      })
     end
   },
 

@@ -17,7 +17,7 @@ set( 'n', '<Leader>fe', ':Telescope find_files<CR>' ) -- Telescope
 set( 'n', '<Leader>fp', ':Telescope commands<CR>' ) -- Telescope
 
 -- Fern
-set( 'n', '<Leader>e', ':NeoTreeShowToggle<CR>' ) -- Fern
+set( 'n', '<Leader>e', ':Fern . -reveal=% -drawer -toggle -width=40<CR>' ) -- Fern
 
 set( 't', '<Esc>', '<C-\\><C-n>', { noremap = true } )
 
