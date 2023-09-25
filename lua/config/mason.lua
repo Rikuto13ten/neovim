@@ -8,9 +8,7 @@ require('mason').setup()
 ------------------------
 require('mason-lspconfig').setup_handlers({ function(server)
   local opt = {
-    capabilities = require('cmp_nvim_lsp').default_capabilities()
-  }
-  require('lspconfig')[server].setup(opt)
+    capabilities = require('cmp_nvim_lsp').default_capabilities() } require('lspconfig')[server].setup(opt)
 end })
 
 ------------------------
@@ -104,6 +102,51 @@ require('nvim-treesitter.configs').setup {
 ------------------------------
 -- lsp language
 ------------------------------
+
+--kotlin
+nvim_lsp.kotlin_language_server.setup {
+  on_attach = on_attach
+}
+
+--lua
+nvim_lsp.lua_ls.setup {
+  on_attach = on_attach,
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+    if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+        Lua = {
+          runtime = {
+            -- Tell the language server which version of Lua you're using
+            -- (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT'
+          },
+          -- Make the server aware of Neovim runtime files
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME
+              -- "${3rd}/luv/library"
+              -- "${3rd}/busted/library",
+            }
+            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+            -- library = vim.api.nvim_get_runtime_file("", true)
+          }
+        }
+      })
+
+      client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+    end
+    return true
+  end
+}
+
+--vim
+nvim_lsp.vimls.setup {
+  on_attach = on_attach
+}
+
+-- typescript
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
@@ -147,7 +190,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 vim.cmd [[
-set updatetime=500
+set updatetime=100
 highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
 highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
 highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
