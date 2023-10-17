@@ -1,6 +1,7 @@
 local language = {
   'lua',
   'kotlin',
+  'scala',
 }
 
 -- treesitter
