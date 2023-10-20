@@ -1,6 +1,8 @@
 local set = vim.keymap.set
 vim.g.mapleader = " "
 
+set( 'i', 'jj', '<Esc>')
+
 -- move window
 set( 'n', '<Leader>h', '<C-w>h' )
 set( 'n', '<Leader>j', '<C-w>j' )
@@ -22,7 +24,7 @@ set( 'n', '<Leader>e', ':Fern . -reveal=% -drawer -toggle -width=40<CR>' ) -- Fe
 set( 't', '<Esc>', '<C-\\><C-n>', { noremap = true } )
 
 -- HopWord
-set( 'n', '<Leader>s', ':HopWord<CR>')
+set( 'n', '<Leader>s', '<Plug>(jumpcursor-jump)')
 
 -- window size
 set( 'n', '<Leader>ww+', ':vertical resize +10<CR>' )
@@ -39,7 +41,7 @@ set( 'n', '<Leader>tt', ':terminal<CR>' )
 -- lsp
 set('n', 'gk', '<cmd>Lspsaga hover_doc<CR>')
 set('n', 'gr', '<cmd>Lspsaga rename<CR>')
-set('n', 'ga', '<cmd>Lspsaga code_action<CR>')
+set('n', 'gq', '<cmd>Lspsaga code_action<CR>')
 set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>')
 set('n', 'go', '<cmd>Lspsaga outline<CR>')
 set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')

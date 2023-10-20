@@ -27,7 +27,16 @@ vim.g.loaded_netrwPlugin = 1
 -- theme
 --------------------------------
 vim.cmd('syntax on')
-vim.cmd('colorscheme iceberg')
+vim.cmd('colorscheme nordic')
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+vim.cmd('hi NormalNC guibg=NONE ctermbg=NONE')
+vim.cmd('hi VertSplit guibg=NONE ctermbg=NONE')
+vim.cmd('hi EndOfBuffer guibg=NONE ctermbg=NONE')
+vim.cmd('hi TermCursorNC guibg=NONE ctermbg=NONE')
+vim.cmd('hi TermCursor guibg=NONE ctermbg=NONE')
+vim.cmd('hi NonText guibg=NONE ctermbg=NONE')
+vim.cmd('hi Folded guibg=NONE ctermbg=NONE')
+
 
 --------------------------------
 -- terminal mode

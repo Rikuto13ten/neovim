@@ -87,9 +87,7 @@ require('lazy').setup({
     end
   },
 
-  --------------------------------------------
   -- which-key
-  --------------------------------------------
   {
     "folke/which-key.nvim",
     config = function()
@@ -108,15 +106,8 @@ require('lazy').setup({
     end
   },
 
-  -- hop
-  {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    config = function()
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-
+  -- jumpcursor
+  { 'skanehira/jumpcursor.vim' },
   -- indentscope
   {
     'echasnovski/mini.indentscope',
@@ -142,8 +133,37 @@ require('lazy').setup({
     end
   },
 
+  -- scala
   {
     "scalameta/nvim-metals",
     requires = { 'nvim-lua/plenary.nvim' },
   },
+
+  -- nordic
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require 'nordic' .load()
+    end
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = {"nvim-lua/plenary.nvim", "vim-test/vim-test"}
+  },
+
+  {
+    'nvim-lua/plenary.nvim'
+  },
+
+  {
+    'mrcjkb/haskell-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    version = '^2', -- Recommended
+    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+  }
 })
