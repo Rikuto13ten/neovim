@@ -1,6 +1,7 @@
 require 'keymap'
 require 'plugins'
 require 'config/mason'
+require 'language/language'
 
 vim.o.showtabline = 0
 vim.o.shiftwidth = 2

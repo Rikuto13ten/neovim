@@ -4,5 +4,8 @@
         "autoSave",
         "window_move",
         "set_keymap"
+    ],
+    "diagnostics.disable": [
+        "unused-local"
     ]
 }

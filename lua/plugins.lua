@@ -158,12 +158,24 @@ require('lazy').setup({
     'nvim-lua/plenary.nvim'
   },
 
-  {
-    'mrcjkb/haskell-tools.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    version = '^2', -- Recommended
-    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
-  }
+  -- haskell_tools
+{
+  'mrcjkb/haskell-tools.nvim',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
+  version = '^2', -- Recommended
+  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+  init = function()
+    vim.g.haskell_tools = {
+      hls = {
+        default_settings = {
+          haskell = {
+            formattingProvider = 'ormolu'
+          }
+        }
+      }
+    }
+  end,
+}
 })

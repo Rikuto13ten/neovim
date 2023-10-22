@@ -2,6 +2,7 @@ local set = vim.keymap.set
 vim.g.mapleader = " "
 
 set( 'i', 'jj', '<Esc>')
+set( 'n', '<Leader>q', ':q<CR>' )
 
 -- move window
 set( 'n', '<Leader>h', '<C-w>h' )
