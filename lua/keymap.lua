@@ -38,17 +38,3 @@ set( 'n', '<C-s>', ':w<CR>' )
 
 -- terminal
 set( 'n', '<Leader>tt', ':terminal<CR>' )
-
--- lsp
-set('n', 'gk', '<cmd>Lspsaga hover_doc<CR>')
-set('n', 'gr', '<cmd>Lspsaga rename<CR>')
-set('n', 'gq', '<cmd>Lspsaga code_action<CR>')
-set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>')
-set('n', 'go', '<cmd>Lspsaga outline<CR>')
-set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
-set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')

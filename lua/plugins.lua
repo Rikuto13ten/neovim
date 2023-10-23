@@ -1,8 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  --------------------------------------------
-  -- lazy
-  --------------------------------------------
   vim.fn.system({
     "git",
     "clone",
@@ -13,29 +10,22 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end vim.opt.rtp:prepend(lazypath)
 
+-- setup
 require('lazy').setup({
-  -- lsp
-  { "neovim/nvim-lspconfig" },
   -- mason
   {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
+    'williamboman/mason.nvim',
+    build = ':MasonUpdate',
+    opts = {},
   },
-  { "williamboman/mason-lspconfig.nvim" },
-  { "hrsh7th/nvim-cmp" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/vim-vsnip" },
-  { "hrsh7th/cmp-cmdline" },
-  { "onsails/lspkind.nvim" },
-  {
-    "glepnir/lspsaga.nvim",
-    event = "LspAttach",
-    dependencies = {
-      {"nvim-tree/nvim-web-devicons"},
-      --Please make sure you install markdown and markdown_inline parser
-      {"nvim-treesitter/nvim-treesitter"}
-    }
-  },
+  -- mason-lspconfig
+  {'williamboman/mason-lspconfig.nvim'},
+  {'neovim/nvim-lspconfig'},
+  {'hrsh7th/nvim-cmp'},
+  {'hrsh7th/cmp-nvim-lsp'},
+  {'hrsh7th/vim-vsnip'},
+
+  -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate"

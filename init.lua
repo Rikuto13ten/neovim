@@ -1,7 +1,9 @@
 require 'keymap'
 require 'plugins'
-require 'config/mason'
+require 'config/lsp/lsp'
 require 'language/language'
+require 'config/lsp/lsp_treesitter'
+require 'config/lsp/null_ls'
 
 vim.o.showtabline = 0
 vim.o.shiftwidth = 2
@@ -50,10 +52,10 @@ vim.cmd [[
 
   command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 ]]
+
 --------------------------------
 -- command mode
 --------------------------------
-
 -- 上下矢印キーで補完候補を選択する
 vim.cmd('cnoremap <expr> <Up> pumvisible() ? "\\<C-p>" : "\\<Up>"')
 vim.cmd('cnoremap <expr> <Down> pumvisible() ? "\\<C-n>" : "\\<Down>"')
