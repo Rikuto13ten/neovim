@@ -5,6 +5,8 @@ require 'language/language'
 require 'config/lsp/lsp_treesitter'
 require 'config/lsp/null_ls'
 
+local vim = vim
+
 vim.o.showtabline = 0
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2

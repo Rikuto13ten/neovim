@@ -95,6 +95,14 @@ require('lazy').setup({
 
   -- jumpcursor
   { 'skanehira/jumpcursor.vim' },
+
+  { 
+    'phaazon/hop.nvim',
+    config = function ()
+      require'hop'.setup()
+    end
+  },
+
   -- indentscope
   {
     'echasnovski/mini.indentscope',

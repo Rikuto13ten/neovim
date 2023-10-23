@@ -25,7 +25,7 @@ set( 'n', '<Leader>e', ':Fern . -reveal=% -drawer -toggle -width=40<CR>' ) -- Fe
 set( 't', '<Esc>', '<C-\\><C-n>', { noremap = true } )
 
 -- HopWord
-set( 'n', '<Leader>s', '<Plug>(jumpcursor-jump)')
+set( 'n', '<Leader>s', ':HopChar1<CR>')
 
 -- window size
 set( 'n', '<Leader>ww+', ':vertical resize +10<CR>' )
