@@ -2,7 +2,8 @@ local language = {
   'lua',
   'kotlin',
   'scala',
-  'haskell'
+  'haskell',
+  'go'
 }
 
 -- treesitter

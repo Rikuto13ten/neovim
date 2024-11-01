@@ -17,6 +17,8 @@ vim.o.number = true
 vim.o.autoindent = true
 vim.o.ignorecase = true
 vim.o.textwidth = 160
+vim.o.formatoptions = q
+
 vim.wo.cursorline = true
 
 vim.opt.list = true
@@ -41,7 +43,6 @@ vim.cmd('hi TermCursorNC guibg=NONE ctermbg=NONE')
 vim.cmd('hi TermCursor guibg=NONE ctermbg=NONE')
 vim.cmd('hi NonText guibg=NONE ctermbg=NONE')
 vim.cmd('hi Folded guibg=NONE ctermbg=NONE')
-
 
 --------------------------------
 -- terminal mode
