@@ -3,7 +3,8 @@ local language = {
   'kotlin',
   'scala',
   'haskell',
-  'go'
+  'go',
+  'json'
 }
 
 -- treesitter

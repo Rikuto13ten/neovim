@@ -4,6 +4,7 @@ require 'config/lsp/lsp'
 require 'language/language'
 require 'config/lsp/lsp_treesitter'
 require 'config/lsp/null_ls'
+require 'config/markdown/render-markdown-setup'
 
 local vim = vim
 
@@ -23,6 +24,7 @@ vim.wo.cursorline = true
 
 vim.opt.list = true
 vim.opt.listchars = { tab = '->', space = '･', eol = '¬', trail = '-' }
+vim.opt.wrap = false
 
 vim.g.loaded_devicons = true
 vim.g.devicons_enable = true
@@ -34,7 +36,7 @@ vim.g.loaded_netrwPlugin = 1
 -- theme
 --------------------------------
 vim.cmd('syntax on')
-vim.cmd('colorscheme nordic')
+vim.cmd('colorscheme catppuccin')
 vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 vim.cmd('hi NormalNC guibg=NONE ctermbg=NONE')
 vim.cmd('hi VertSplit guibg=NONE ctermbg=NONE')

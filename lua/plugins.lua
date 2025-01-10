@@ -40,19 +40,19 @@ require('lazy').setup({
   -- fern
   --------------------------------------------
   {
-	  'lambdalisue/fern.vim',
-	  keys = {
-		  { "<leader>e", ":Fern . -reveal=% -drawer -toggle -width=40<CR>", desc = "toggle fern" },
-	  },
-	  dependencies = {
-		  { 'lambdalisue/nerdfont.vim', },
-		  {
-			  'lambdalisue/fern-renderer-nerdfont.vim',
-			  config = function()
-				  vim.g['fern#renderer'] = "nerdfont"
-			  end
-		  },
-	  }
+    'lambdalisue/fern.vim',
+    keys = {
+      { "<leader>e", ":Fern . -reveal=% -drawer -toggle -width=40<CR>", desc = "toggle fern" },
+    },
+    dependencies = {
+      { 'lambdalisue/nerdfont.vim', },
+      {
+        'lambdalisue/fern-renderer-nerdfont.vim',
+        config = function()
+          vim.g['fern#renderer'] = "nerdfont"
+        end
+      },
+    }
   },
 
   --------------------------------------------
@@ -96,7 +96,7 @@ require('lazy').setup({
   -- jumpcursor
   { 'skanehira/jumpcursor.vim' },
 
-  { 
+  {
     'phaazon/hop.nvim',
     config = function ()
       require'hop'.setup()
@@ -154,23 +154,48 @@ require('lazy').setup({
   },
 
   -- haskell_tools
-{
-  'mrcjkb/haskell-tools.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-  },
-  version = '^2', -- Recommended
-  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
-  init = function()
-    vim.g.haskell_tools = {
-      hls = {
-        default_settings = {
-          haskell = {
-            formattingProvider = 'ormolu'
+  {
+    'mrcjkb/haskell-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    version = '^2', -- Recommended
+    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+    init = function()
+      vim.g.haskell_tools = {
+        hls = {
+          default_settings = {
+            haskell = {
+              formattingProvider = 'ormolu'
+            }
           }
         }
       }
-    }
-  end,
-}
+    end,
+  },
+
+  -- denops
+  {
+    'vim-denops/denops.vim',
+  },
+
+  -- markdown preview
+  {
+    'kat0h/bufpreview.vim',
+    build = 'deno task prepare',
+  },
+
+  {
+    'dhruvasagar/vim-table-mode'
+  },
+
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
+
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 })
