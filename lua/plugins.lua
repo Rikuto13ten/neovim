@@ -174,17 +174,6 @@ require('lazy').setup({
     end,
   },
 
-  -- denops
-  {
-    'vim-denops/denops.vim',
-  },
-
-  -- markdown preview
-  {
-    'kat0h/bufpreview.vim',
-    build = 'deno task prepare',
-  },
-
   {
     'dhruvasagar/vim-table-mode'
   },
