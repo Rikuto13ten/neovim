@@ -178,6 +178,7 @@ require('lazy').setup({
     'dhruvasagar/vim-table-mode'
   },
 
+  -- markdown
   {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
@@ -186,5 +187,6 @@ require('lazy').setup({
     opts = {},
   },
 
+  -- theme
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 })

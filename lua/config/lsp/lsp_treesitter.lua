@@ -4,7 +4,8 @@ local language = {
   'scala',
   'haskell',
   'go',
-  'json'
+  'json',
+  'nix'
 }
 
 -- treesitter
