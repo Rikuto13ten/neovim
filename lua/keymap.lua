@@ -11,20 +11,17 @@ set( 'n', '<Leader>k', '<C-w>k' )
 set( 'n', '<Leader>l', '<C-w>l' )
 
 -- create window
-set( 'n', '<Leader>wj', '<C-w>s' )
-set( 'n', '<Leader>wl', '<C-w>v' )
-
--- Telescope
-set( 'n', '<Leader>fg', ':Telescope live_grep<CR>' ) -- Telescope
-set( 'n', '<Leader>fe', ':Telescope find_files<CR>' ) -- Telescope
-set( 'n', '<Leader>fp', ':Telescope commands<CR>' ) -- Telescope
+set( 'n', '<Leader>wj', '<C-w>s' ) -- 右に window 作成
+set( 'n', '<Leader>wl', '<C-w>v' ) -- 下に window 作成
 
 -- Fern
-set( 'n', '<Leader>e', ':Fern . -reveal=% -drawer -toggle -width=40<CR>' ) -- Fern
+set( 'n', '<Leader>e', ':Fern . -reveal=% -drawer -toggle -width=40<CR>' ) -- 開く
 
-set( 't', '<Esc>', '<C-\\><C-n>', { noremap = true } )
+-- terminal 
+set( 't', '<Esc>', '<C-\\><C-n>', { noremap = true } ) -- mode 中に normal modeにする
+set( 'n', '<Leader>tt', ':terminal<CR>' ) -- terminal を開く
 
--- HopWord
+-- jumpcursor
 set( 'n', '<Leader>s', '<Plug>(jumpcursor-jump)')
 
 -- window size
@@ -36,5 +33,3 @@ set( 'n', '<Leader>wh-', ':resize -10<CR>' )
 -- save
 set( 'n', '<C-s>', ':w<CR>' )
 
--- terminal
-set( 'n', '<Leader>tt', ':terminal<CR>' )

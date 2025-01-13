@@ -1,8 +1,5 @@
 local language = {
   'lua',
-  'kotlin',
-  'scala',
-  'haskell',
   'go',
   'json',
   'nix'
@@ -13,17 +10,25 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     language
   },
-  sync_install = true,
-  auto_install = true,
+  sync_install = true, -- パーサーを同期的にインストール
+  auto_install = true, -- 言語パーサーを自動的にインストール
+
+  -- 構文ハイライト
   highlight = {
     enable = true,
- },
+  },
+
+  -- インデント
   indent = {
     enable = true
   },
+
+  -- 自動タグ閉じ
   autotag = {
     enable = true,
   },
+
+  -- 括弧
   rainbow = {
     enable = true,
     extended_mode = true,

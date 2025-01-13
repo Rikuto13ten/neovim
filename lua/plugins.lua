@@ -32,7 +32,7 @@ require('lazy').setup({
   },
 
   --------------------------------------------
-  -- iceberg
+  -- iceberg theme
   --------------------------------------------
   { "cocopon/iceberg.vim" },
 
@@ -53,25 +53,6 @@ require('lazy').setup({
         end
       },
     }
-  },
-
-  --------------------------------------------
-  -- telescope
-  --------------------------------------------
-  {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function ()
-     require('telescope').setup({})
-    end
-  },
-
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    config = function ()
-     require('telescope').load_extension "file_browser"
-    end
   },
 
   -- which-key
@@ -95,13 +76,6 @@ require('lazy').setup({
 
   -- jumpcursor
   { 'skanehira/jumpcursor.vim' },
-
-  {
-    'phaazon/hop.nvim',
-    config = function ()
-      require'hop'.setup()
-    end
-  },
 
   -- indentscope
   {
@@ -128,12 +102,6 @@ require('lazy').setup({
     end
   },
 
-  -- scala
-  {
-    "scalameta/nvim-metals",
-    requires = { 'nvim-lua/plenary.nvim' },
-  },
-
   -- nordic
   {
     'AlexvZyl/nordic.nvim',
@@ -153,35 +121,10 @@ require('lazy').setup({
     'nvim-lua/plenary.nvim'
   },
 
-  -- haskell_tools
-  {
-    'mrcjkb/haskell-tools.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    version = '^2', -- Recommended
-    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
-    init = function()
-      vim.g.haskell_tools = {
-        hls = {
-          default_settings = {
-            haskell = {
-              formattingProvider = 'ormolu'
-            }
-          }
-        }
-      }
-    end,
-  },
-
-  {
-    'dhruvasagar/vim-table-mode'
-  },
-
-  -- markdown
+  -- markdown コード内で表示を markdown みたいにする
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
