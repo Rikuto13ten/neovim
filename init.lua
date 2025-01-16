@@ -1,7 +1,6 @@
 require 'keymap'
 require 'plugins'
 require 'config/lsp/lsp'
-require 'config/lsp/lsp_treesitter'
 require 'config/lsp/null_ls'
 require 'config/markdown/render-markdown-setup'
 
