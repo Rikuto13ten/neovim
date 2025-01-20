@@ -1,3 +1,5 @@
+local vim = vim
+--require('image').setup({})
 require('render-markdown').setup({
   heading = {
     border = true
@@ -14,3 +16,5 @@ require('render-markdown').setup({
     enabled = true
   }
 })
+
+-- require "config/markdown/diagram"

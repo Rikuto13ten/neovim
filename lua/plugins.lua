@@ -132,5 +132,19 @@ require('lazy').setup({
   },
 
   -- theme
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+ -- {
+ --   "3rd/diagram.nvim",
+ --   dependencies = {
+ --     "3rd/image.nvim",
+ --   },
+ --   opts = {},
+ -- },
+  {
+    "3rd/image.nvim",
+    config = function ()
+      require('image').set({})
+    end
+  }
 })
