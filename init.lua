@@ -19,7 +19,6 @@ opt.smartindent = true -- 自動インデント
 opt.autoindent = true -- 新しい行を現在の行のインデントと同じにする
 opt.number = true -- 行番号の表示
 opt.ignorecase = true -- 検索時に大文字・小文字を区別しない
-opt.textwidth = 160 -- テキスト折り返しライン
 opt.list = true -- 不可視文字を可視化
 opt.listchars = { tab = '->', space = '･', eol = '¬', trail = '-' }
 opt.wrap = false -- 折り返しはさせない
