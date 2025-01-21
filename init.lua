@@ -6,24 +6,32 @@ require 'config/markdown/render-markdown-setup'
 
 local vim = vim
 
-vim.o.showtabline = 0
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
-vim.o.expandtab = true
-vim.o.smartindent = true
-vim.o.autoindent = true
-vim.o.number = true
-vim.o.autoindent = true
-vim.o.ignorecase = true
-vim.o.textwidth = 160
-vim.o.formatoptions = q
+--------------------------------
+-- opt : vim のオプションを管理するために使用
+--------------------------------
+local opt = vim.opt
 
+opt.showtabline = 0 -- editor tab を非表示
+opt.shiftwidth = 2 -- インデントの幅
+opt.tabstop = 2 -- tab の表示幅
+opt.expandtab = true -- tab を space に変更
+opt.smartindent = true -- 自動インデント
+opt.autoindent = true -- 新しい行を現在の行のインデントと同じにする
+opt.number = true -- 行番号の表示
+opt.ignorecase = true -- 検索時に大文字・小文字を区別しない
+opt.textwidth = 160 -- テキスト折り返しライン
+opt.list = true -- 不可視文字を可視化
+opt.listchars = { tab = '->', space = '･', eol = '¬', trail = '-' }
+opt.wrap = false -- 折り返しはさせない
+
+--------------------------------
+-- wo
+--------------------------------
 vim.wo.cursorline = true
 
-vim.opt.list = true
-vim.opt.listchars = { tab = '->', space = '･', eol = '¬', trail = '-' }
-vim.opt.wrap = false
-
+--------------------------------
+-- g: グローバル変数
+--------------------------------
 vim.g.loaded_devicons = true
 vim.g.devicons_enable = true
 vim.g.indent_blankline_enabled = false

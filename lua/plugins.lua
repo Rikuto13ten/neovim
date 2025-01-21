@@ -142,9 +142,15 @@ require('lazy').setup({
  --   opts = {},
  -- },
   {
-    "3rd/image.nvim",
-    config = function ()
-      require('image').set({})
+    "3rd/image.nvim"
+  },
+
+  {
+    'Vonr/align.nvim',
+    branch = "v2",
+    lazy = true,
+    init = function()
+      -- Create your mappings here
     end
   }
 })
