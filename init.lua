@@ -36,6 +36,7 @@ vim.g.devicons_enable = true
 vim.g.indent_blankline_enabled = false
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g['fern#default_hidden'] = 1
 
 --------------------------------
 -- theme

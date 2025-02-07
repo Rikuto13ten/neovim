@@ -16,6 +16,11 @@ require('mason-lspconfig').setup_handlers({
 
     -- 各言語 LSP のセットアップ
     require('lspconfig')[server_name].setup(opt)
+
+    -- Gleam setting
+    if (vim.fs.dirname(vim.fs.find({ "gleam.toml" }, { upward = true })[1])) then
+      require("lspconfig").gleam.setup({})
+    end
   end
 })
 

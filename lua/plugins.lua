@@ -88,20 +88,20 @@ require('lazy').setup({
   },
 
   -- auto save
-  {
-    "Pocco81/AutoSave.nvim",
-    config = function()
-      require("auto-save").setup{
-        enabled = true,
-        trigger_events = {"InsertLeave"},
-        execution_message = {
-          message = function()
-            return ("auto save" .. vim.fn.strftime("%H:%M:%S"))
-          end
-        },
-      }
-    end
-  },
+--  {
+--    "Pocco81/AutoSave.nvim",
+--    config = function()
+--      require("auto-save").setup{
+--        enabled = true,
+--        trigger_events = {"InsertLeave"},
+--        execution_message = {
+--          message = function()
+--            return ("auto save" .. vim.fn.strftime("%H:%M:%S"))
+--          end
+--        },
+--      }
+--    end
+--  },
 
   -- nordic
   {
