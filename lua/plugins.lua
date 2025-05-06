@@ -143,4 +143,9 @@ require('lazy').setup({
       require('image').setup({})
     end,
   },
+
+  -- chrome の 拡張機能 GhostText
+  {
+    'subnut/nvim-ghost.nvim',
+  },
 })
